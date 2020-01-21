@@ -39,7 +39,7 @@ bash make.sh
 ### Train
 Here we provide several examples to train with this repo at Something-Something v1 dataset:
 
-** Train from scratch (with imagenet pretrain) ** 
+**Train from scratch (with imagenet pretrain)** 
 ```bash
 python -u main.py something RGB \
      --arch resnet50 --num_segments 8 \
@@ -49,7 +49,7 @@ python -u main.py something RGB \
      --tin --shift_div=4 --gpus 0 1 2 3 4 5 6 7 --workers 36  \
 ```
 
-** Train from pretrained model  **
+**Train from pretrained model**
 ```bash
 python -u main.py something RGB \
      --arch resnet50 --num_segments 8 \
@@ -60,7 +60,7 @@ python -u main.py something RGB \
      --tune_from=pretrained/xxx.pth.tar \
 ```
 
-** Resume training **
+**Resume trainin**
 ```bash
 python -u main.py something RGB \
      --arch resnet50 --num_segments 8 \
@@ -75,7 +75,7 @@ python -u main.py something RGB \
 ### Test
 Here we provide several examples to test with this repo at Something-Something v1 dataset:
 
-** Test with center crop and 1 temporal clips (same as training setting)**
+**Test with center crop and 1 temporal clips (same as training setting)**
 ```bash
 python -u  ignore test.py something RGB \
      --arch resnet50 --num_segments 8 --print-freq 50 --npb \
@@ -87,7 +87,7 @@ python -u  ignore test.py something RGB \
      --resume_path=checkpoint/xxx/ckpt.best.pth.tar \
 ```
 
-** Test with Full resolution, 2 temporal clips and 3 spatial crops **
+**Test with Full resolution, 2 temporal clips and 3 spatial crops**
 ```bash
 python -u  ignore test.py something RGB \
      --arch resnet50 --num_segments 8 --print-freq 50 --npb \
@@ -110,4 +110,3 @@ If you use our code, please consider citing our paper or challenge report:
 
 ```
 ```
-
