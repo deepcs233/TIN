@@ -5,7 +5,7 @@
 import torch
 from torch.autograd import Function
 
-import cudashift as backend
+from _ext import rtc as _backend
 
 class ShiftFeatureFunc(Function):
     def __init__(self):
@@ -19,7 +19,7 @@ class ShiftFeatureFunc(Function):
             self.save_for_backward(shift)
 
         out = torch.zeros_like(data)
-        backend.shift_featuremap_cuda_forward(data, shift, out)
+        _backend.shift_featuremap_cuda_forward(data, shift, out)
         return out
 
     def backward(self, grad_output):
@@ -28,5 +28,5 @@ class ShiftFeatureFunc(Function):
         shift = self.saved_tensors[0]
         data_grad_input = grad_output.new(*grad_output.size()).zero_()
         shift_grad_input = shift.new(*shift.size()).zero_()
-        backend.shift_featuremap_cuda_backward(grad_output, shift, data_grad_input)
+        _backend.shift_featuremap_cuda_backward(grad_output, shift, data_grad_input)
         return data_grad_input, shift_grad_input

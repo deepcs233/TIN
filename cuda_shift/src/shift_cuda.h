@@ -1,5 +1,5 @@
-at::Tensor shift_featuremap_cuda_forward(at::Tensor &data,
-                                   at::Tensor &shift, at::Tensor &out);
+void shift_featuremap_cuda_forward(THCudaTensor *data,
+                                   THCudaIntTensor *shift, THCudaTensor *out);
 
-at::Tensor shift_featuremap_cuda_backward(at::Tensor &grad_output,
-                                   at::Tensor &shift, at::Tensor &grad_input);
+void shift_featuremap_cuda_backward(THCudaTensor *grad_output,
+                                   THCudaIntTensor *shift, THCudaTensor *grad_input);
