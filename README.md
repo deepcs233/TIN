@@ -60,7 +60,7 @@ python -u main.py something RGB \
      --tune_from=pretrained/xxx.pth.tar \
 ```
 
-**Resume trainin**
+**Resume training**
 ```bash
 python -u main.py something RGB \
      --arch resnet50 --num_segments 8 \
