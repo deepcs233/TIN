@@ -108,6 +108,7 @@ This code is based on the original TSN and TSM codebased. Thanks to their great 
 
 If you use our code, please consider citing our paper or challenge report:
 
+```
 @misc{shao2020temporal,
     title={Temporal Interlacing Network},
     author={Hao Shao and Shengju Qian and Yu Liu},
@@ -116,6 +117,4 @@ If you use our code, please consider citing our paper or challenge report:
     archivePrefix={arXiv},
     primaryClass={cs.CV}
 }
-
-```
 ```
