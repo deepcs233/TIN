@@ -98,10 +98,7 @@ class TSNDataSet(data.Dataset):
             else:
                 try:
                     filename = os.path.join(self.root_path, directory, self.image_tmpl.format(idx))
-                    value = mc.pyvector()
-                    self.mclient.Get(filename, value)
-                    value_str = mc.ConvertBuffer(value)
-                    flow = pil_loader(value_str)
+                    flow = Image.open(filename).convert('RGB')
                 except Exception:
                     print('error loading flow file:',
                           os.path.join(self.root_path, directory, self.image_tmpl.format(idx)))
