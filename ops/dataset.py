@@ -7,12 +7,6 @@ import numpy as np
 from numpy.random import randint
 import random
 
-def pil_loader(img_str):
-    buff = io.BytesIO(img_str)
-
-    with Image.open(buff) as img:
-        img = img.convert('RGB')
-    return img
 
 class VideoRecord(object):
     def __init__(self, row):
