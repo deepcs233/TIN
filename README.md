@@ -99,7 +99,7 @@ python -u  ignore test.py something RGB \
      --resume_path=checkpoint/xxx/ckpt.best.pth.tar \
 ```
 ## ModelZoo
-Pretrain model can be found in (X-Temporal)[https://github.com/Sense-X/X-Temporal].
+Pretrain model can be found in [X-Temporal](https://github.com/Sense-X/X-Temporal).
 
 ### Acknowledge 
 
