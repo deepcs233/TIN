@@ -147,11 +147,11 @@ def test(val_loader, model, epoch):
             if args.multi_class:
                 from ops.calculate_map import calculate_mAP
                 mAP = calculate_mAP(output.data, target)
-                mAPs.update(mAP)
+                mAPs.update(mAP, num)
             else:
                 prec1, prec5 = accuracy(output.data, target, topk=(1, 5))
-                top1.update(prec1.item())
-                top5.update(prec5.item())
+                top1.update(prec1.item(), num)
+                top5.update(prec5.item(), num)
 
 
         if args.multi_class:
